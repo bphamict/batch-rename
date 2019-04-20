@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Batch_Rename"
         mc:Ignorable="d"
-        Title="ReplaceArgsDialog" Height="450" Width="800">
+        Title="Replace Args Dialog" Height="200" Width="250">
     <Canvas>
-        <Label Canvas.Left="20" Canvas.Top="20">Enter string need to Replaced</Label>
+        <Label Canvas.Left="20" Canvas.Top="20" FontSize="14">Enter string need to Replaced</Label>
         <TextBox Name="Needle_TextBox" Width="200" Canvas.Left="20" Canvas.Top="50"/>
-        <Label Canvas.Top="70" Canvas.Left="20">Enter string would be Replaced</Label>
+        <Label Canvas.Top="70" Canvas.Left="20" FontSize="14">Enter string would be Replaced</Label>
         <TextBox Name="Hammer_TextBox" Width="200" Canvas.Left="20" Canvas.Top="100"/>
         <StackPanel Orientation="Horizontal" Canvas.Left="50" Canvas.Top="130">
             <Button Content="OK" Width="70" Click="Ok_Btn_Click"/>

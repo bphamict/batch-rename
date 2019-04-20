@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Batch_Rename"
         mc:Ignorable="d"
-        Title="ExtensionArgsDialog" Height="450" Width="800">
+        Title="Extension Args Dialog" Height="150" Width="250">
     <Canvas>
-        <Label Content="Enter new Extension" Canvas.Left="20" Canvas.Top="20"/>
+        <Label Content="Enter new Extension" Canvas.Left="20" Canvas.Top="20" FontSize="14"/>
         <TextBox Name="Extension_TextBox" Width="200" Canvas.Left="20" Canvas.Top="50"/>
         <StackPanel Orientation="Horizontal" Canvas.Left="50" Canvas.Top="80">
             <Button Click="Ok_Btn_Click" Content="OK" Width="70"/>

@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Batch_Rename"
         mc:Ignorable="d"
-        Title="RemoveArgsDialog" Height="450" Width="800">
+        Title="Remove Args Dialog" Height="200" Width="250">
     <Canvas>
-        <Label Content="Enter start index" Canvas.Left="20" Canvas.Top="20"/>
+        <Label Content="Enter start index" Canvas.Left="20" Canvas.Top="20" FontSize="14"/>
         <TextBox Name="Start_Index_TextBox" Width="200" Canvas.Left="20" Canvas.Top="50"/>
-        <Label Content="Enter number of characters to Remove" Canvas.Left="20" Canvas.Top="70"/>
+        <Label Content="Enter number of characters" Canvas.Left="20" Canvas.Top="70" FontSize="14"/>
         <TextBox Name="Count_TextBox" Width="200" Canvas.Left="20" Canvas.Top="100"/>
         <StackPanel Orientation="Horizontal" Canvas.Left="50" Canvas.Top="130">
             <Button Click="Ok_Btn_Click" Content="OK" Width="70"/>
