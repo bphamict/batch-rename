@@ -19,8 +19,8 @@ namespace Batch_Rename
     /// </summary>
     public partial class RemoveArgsDialog : Window
     {
-        public int StartIndex;
-        public int Count;
+        public string StartIndex;
+        public string Count;
 
         public RemoveArgsDialog(RemoveArgs args)
         {
@@ -32,8 +32,8 @@ namespace Batch_Rename
 
         private void Ok_Btn_Click(object sender, RoutedEventArgs e)
         {
-            StartIndex = Int32.Parse(Start_Index_TextBox.Text);
-            Count = Int32.Parse(Count_TextBox.Text);
+            StartIndex = Start_Index_TextBox.Text;
+            Count = Count_TextBox.Text;
 
             this.DialogResult = true;
         }

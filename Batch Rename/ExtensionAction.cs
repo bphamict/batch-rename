@@ -1,16 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Batch_Rename
 {
-    public class ExtensionArgs : StringArgs
+    public class ExtensionArgs : StringArgs, INotifyPropertyChanged
     {
-        public string NewExtension { get; set; }
+        private string _NewExtension;
 
-        public string Details => $"Change extension to {NewExtension}";
+        public string NewExtension
+        {
+            get => _NewExtension;
+            set
+            {
+                _NewExtension = value;
+                NotifyChange("NewExtension");
+                NotifyChange("Details");
+            }
+        }
+
+        public string Details => $"Change extension by \"{NewExtension}\"";
+
+        private void NotifyChange(string v)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(v));
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 
     class ExtensionAction : StringAction
@@ -35,7 +54,7 @@ namespace Batch_Rename
 
             if (screen.ShowDialog() == true)
             {
-                var myArgs = Args as RemoveArgs;
+                var myArgs = Args as ExtensionArgs;
                 myArgs.NewExtension = screen.NewExtension;
             }
         }

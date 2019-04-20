@@ -14,7 +14,7 @@ namespace Batch_Rename
 
         public string Needle
         {
-            get { return _needle; }
+            get => _needle;
             set
             {
                 _needle = value;
@@ -25,7 +25,7 @@ namespace Batch_Rename
 
         public string Hammer
         {
-            get { return _hammer; }
+            get => _hammer;
             set
             {
                 _hammer = value;
@@ -34,13 +34,13 @@ namespace Batch_Rename
             }
         }
 
+        public string Details => $"Replace \"{Needle}\" with \"{Hammer}\"";
+
         private void NotifyChange(string v)
         {
             if (PropertyChanged != null)
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(v));
         }
-
-        public string Details => $"Replace {Needle} with {Hammer}";
         public event PropertyChangedEventHandler PropertyChanged;
     }
 

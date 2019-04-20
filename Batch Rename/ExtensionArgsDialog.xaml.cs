@@ -20,10 +20,11 @@ namespace Batch_Rename
     public partial class ExtensionArgsDialog : Window
     {
         public string NewExtension;
+
         public ExtensionArgsDialog(ExtensionArgs args)
         {
             InitializeComponent();
-            Extension_TextBox.Text = NewExtension;
+            Extension_TextBox.Text = args.NewExtension;
         }
 
         private void Ok_Btn_Click(object sender, RoutedEventArgs e)
