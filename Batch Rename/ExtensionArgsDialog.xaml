@@ -1,0 +1,17 @@
+﻿<Window x:Class="Batch_Rename.ExtensionArgsDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Batch_Rename"
+        mc:Ignorable="d"
+        Title="ExtensionArgsDialog" Height="450" Width="800">
+    <Canvas>
+        <Label Content="Enter new Extension" Canvas.Left="20" Canvas.Top="20"/>
+        <TextBox Name="Extension_TextBox" Width="200" Canvas.Left="20" Canvas.Top="50"/>
+        <StackPanel Orientation="Horizontal" Canvas.Left="50" Canvas.Top="80">
+            <Button Click="Ok_Btn_Click" Content="OK" Width="70"/>
+            <Button Click="Close_Btn_Click" Content="Close" Width="70" Margin="5 0 0 0 "/>
+        </StackPanel>
+    </Canvas>
+</Window>
