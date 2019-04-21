@@ -332,6 +332,17 @@ namespace Batch_Rename
 
         private void Top_File_Btn_Click(object sender, RoutedEventArgs e)
         {
+            if (Files_DataGrid.Items.Count == 0)
+            {
+                MessageBox.Show("No have data");
+                return;
+            }
+            if (Files_DataGrid.SelectedIndex == -1)
+            {
+                MessageBox.Show("Choose a row to move");
+                return;
+            }
+
             var index = Files_DataGrid.SelectedIndex;
             if (index != 0)
             {
@@ -348,6 +359,17 @@ namespace Batch_Rename
 
         private void Up_File_Btn_Click(object sender, RoutedEventArgs e)
         {
+            if (Files_DataGrid.Items.Count == 0)
+            {
+                MessageBox.Show("No have data");
+                return;
+            }
+            if (Files_DataGrid.SelectedIndex == -1)
+            {
+                MessageBox.Show("Choose a row to move");
+                return;
+            }
+
             var index = Files_DataGrid.SelectedIndex;
             if (index != 0)
             {
@@ -364,6 +386,17 @@ namespace Batch_Rename
 
         private void Down_File_Btn_Click(object sender, RoutedEventArgs e)
         {
+            if (Files_DataGrid.Items.Count == 0)
+            {
+                MessageBox.Show("No have data");
+                return;
+            }
+            if (Files_DataGrid.SelectedIndex == -1)
+            {
+                MessageBox.Show("Choose a row to move");
+                return;
+            }
+
             var index = Files_DataGrid.SelectedIndex;
             if (index != Files_DataGrid.Items.Count - 1)
             {
@@ -380,6 +413,17 @@ namespace Batch_Rename
 
         private void Bottom_File_Btn_Click(object sender, RoutedEventArgs e)
         {
+            if (Files_DataGrid.Items.Count == 0)
+            {
+                MessageBox.Show("No have data");
+                return;
+            }
+            if (Files_DataGrid.SelectedIndex == -1)
+            {
+                MessageBox.Show("Choose a row to move");
+                return;
+            }
+
             var index = Files_DataGrid.SelectedIndex;
             var length = Files_DataGrid.Items.Count - 1;
 
@@ -398,6 +442,17 @@ namespace Batch_Rename
 
         private void Top_Folder_Btn_Click(object sender, RoutedEventArgs e)
         {
+            if (Folders_DataGrid.Items.Count == 0)
+            {
+                MessageBox.Show("No have data");
+                return;
+            }
+            if (Folders_DataGrid.SelectedIndex == -1)
+            {
+                MessageBox.Show("Choose a row to move");
+                return;
+            }
+
             var index = Folders_DataGrid.SelectedIndex;
             if (index != 0)
             {
@@ -414,6 +469,17 @@ namespace Batch_Rename
 
         private void Up_Folder_Btn_Click(object sender, RoutedEventArgs e)
         {
+            if (Folders_DataGrid.Items.Count == 0)
+            {
+                MessageBox.Show("No have data");
+                return;
+            }
+            if (Folders_DataGrid.SelectedIndex == -1)
+            {
+                MessageBox.Show("Choose a row to move");
+                return;
+            }
+
             var index = Folders_DataGrid.SelectedIndex;
             if (index != 0)
             {
@@ -430,6 +496,17 @@ namespace Batch_Rename
 
         private void Down_Folder_Btn_Click(object sender, RoutedEventArgs e)
         {
+            if (Folders_DataGrid.Items.Count == 0)
+            {
+                MessageBox.Show("No have data");
+                return;
+            }
+            if (Folders_DataGrid.SelectedIndex == -1)
+            {
+                MessageBox.Show("Choose a row to move");
+                return;
+            }
+
             var index = Folders_DataGrid.SelectedIndex;
             if (index != Folders_DataGrid.Items.Count - 1)
             {
@@ -446,6 +523,17 @@ namespace Batch_Rename
 
         private void Bottom_Folder_Btn_Click(object sender, RoutedEventArgs e)
         {
+            if (Folders_DataGrid.Items.Count == 0)
+            {
+                MessageBox.Show("No have data");
+                return;
+            }
+            if (Folders_DataGrid.SelectedIndex == -1)
+            {
+                MessageBox.Show("Choose a row to move");
+                return;
+            }
+
             var index = Folders_DataGrid.SelectedIndex;
             var length = Folders_DataGrid.Items.Count - 1;
 
