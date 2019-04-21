@@ -42,7 +42,7 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel>
-                <TextBlock FontSize="15" HorizontalAlignment="Center" Margin="0 0 0 20">--- Control Panel Method ---</TextBlock>
+                <TextBlock FontSize="15" HorizontalAlignment="Center" Margin="0 10 0 20">--- Control Panel ---</TextBlock>
                 <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
                     <ComboBox Name="Add_Method_Combobox" Width="75">
                         <ComboBox.ItemTemplate>
@@ -64,22 +64,22 @@
                             <TextBlock>Clear</TextBlock>
                         </StackPanel>
                     </Button>
-                    <Button Padding="5" Margin="5 0 0 0">
+                    <Button Padding="5" Margin="5 0 0 0" Click="Top_Btn_Click">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="Resources/ActionTop_16x.png"/>
                         </StackPanel>
                     </Button>
-                    <Button Padding="5" Margin="2 0 0 0">
+                    <Button Padding="5" Margin="2 0 0 0" Click="Up_Btn_Click">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="Resources/ActionUp_16x.png"/>
                         </StackPanel>
                     </Button>
-                    <Button Padding="5" Margin="2 0 0 0">
+                    <Button Padding="5" Margin="2 0 0 0" Click="Down_Btn_Click">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="Resources/ActionDown_16x.png"/>
                         </StackPanel>
                     </Button>
-                    <Button Padding="5" Margin="2 0 0 0">
+                    <Button Padding="5" Margin="2 0 0 0" Click="Bottom_Btn_Click">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="Resources/ActionBottom_16x.png"/>
                         </StackPanel>
@@ -102,7 +102,7 @@
                     </Button>
                 </StackPanel>
 
-                <ListBox Name="Actions_ListBox" Margin="0 10 10 0" Height="376">
+                <ListBox Name="Actions_ListBox" Margin="0 10 10 0" Height="366">
                     <ListBox.ContextMenu>
                         <ContextMenu>
                             <MenuItem Header="Edit" Click="MenuItem_Click"></MenuItem>
@@ -132,9 +132,35 @@
                                     <TextBlock>Add Files</TextBlock>
                                 </StackPanel>
                             </Button>
+                            <Button Padding="5" Margin="5 0 0 0" Click="Load_Files_Folders_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="Resources/AddFolder_16x.png" Margin="0 0 2 0"/>
+                                    <TextBlock>Add all files in Folders</TextBlock>
+                                </StackPanel>
+                            </Button>
+                            <Button Padding="5" Margin="5 0 0 0" Click="Top_File_Btn_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="Resources/ActionTop_16x.png"/>
+                                </StackPanel>
+                            </Button>
+                            <Button Padding="5" Margin="2 0 0 0" Click="Up_File_Btn_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="Resources/ActionUp_16x.png"/>
+                                </StackPanel>
+                            </Button>
+                            <Button Padding="5" Margin="2 0 0 0" Click="Down_File_Btn_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="Resources/ActionDown_16x.png"/>
+                                </StackPanel>
+                            </Button>
+                            <Button Padding="5" Margin="2 0 0 0" Click="Bottom_File_Btn_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="Resources/ActionBottom_16x.png"/>
+                                </StackPanel>
+                            </Button>
                         </StackPanel>
 
-                        <DataGrid Name="Files_DataGrid" Height="400" Margin="10">
+                        <DataGrid Name="Files_DataGrid" Height="400" Margin="10" GridLinesVisibility="None">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Old name" Width="3*" Binding="{Binding OldName}"/>
                                 <DataGridTextColumn Header="New name" Width="3*" Binding="{Binding NewName}"/>
@@ -150,15 +176,35 @@
                     <StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="10">
-                            <Button Padding="5" Margin="5 0 0 0">
+                            <Button Padding="5" Click="Load_Folders_Click">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="Resources/AddFolder_16x.png" Margin="0 0 2 0"/>
                                     <TextBlock>Add Folders</TextBlock>
                                 </StackPanel>
                             </Button>
+                            <Button Padding="5" Margin="5 0 0 0" Click="Top_Folder_Btn_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="Resources/ActionTop_16x.png"/>
+                                </StackPanel>
+                            </Button>
+                            <Button Padding="5" Margin="2 0 0 0" Click="Up_Folder_Btn_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="Resources/ActionUp_16x.png"/>
+                                </StackPanel>
+                            </Button>
+                            <Button Padding="5" Margin="2 0 0 0" Click="Down_Folder_Btn_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="Resources/ActionDown_16x.png"/>
+                                </StackPanel>
+                            </Button>
+                            <Button Padding="5" Margin="2 0 0 0" Click="Bottom_Folder_Btn_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="Resources/ActionBottom_16x.png"/>
+                                </StackPanel>
+                            </Button>
                         </StackPanel>
 
-                        <DataGrid Name="Folders_DataGrid" Height="400" Margin="10">
+                        <DataGrid Name="Folders_DataGrid" Height="400" Margin="10" GridLinesVisibility="None">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Old name" Width="3*" Binding="{Binding OldName}"/>
                                 <DataGridTextColumn Header="New name" Width="3*" Binding="{Binding NewName}"/>

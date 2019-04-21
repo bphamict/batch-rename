@@ -11,6 +11,7 @@ namespace Batch_Rename
     {
         private int _StartIndex;
         private int _Count;
+        internal string NewCase;
 
         public int StartIndex
         {
