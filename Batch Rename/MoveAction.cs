@@ -14,7 +14,7 @@ namespace Batch_Rename
 
     public class MoveAction : StringAction
     {
-        public string Name => "Move action";
+        public string Name => "Move ISBN action";
 
         public StringProcessor Processor => _move;
 

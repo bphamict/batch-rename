@@ -31,7 +31,15 @@ namespace Batch_Rename
         {
             NewExtension = Extension_TextBox.Text;
 
-            this.DialogResult = true;
+            if (NewExtension == "")
+            {
+                MessageBox.Show("Input data is empty");
+                return;
+            }
+            else
+            {
+                this.DialogResult = true;
+            }
         }
 
         private void Close_Btn_Click(object sender, RoutedEventArgs e)

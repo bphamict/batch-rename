@@ -57,6 +57,11 @@ namespace Batch_Rename
             {
                 NewCase = "Upper First";
             }
+            else
+            {
+                MessageBox.Show("Choose a type");
+                return;
+            }
 
             this.DialogResult = true;
         }

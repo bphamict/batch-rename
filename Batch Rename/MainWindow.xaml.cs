@@ -91,8 +91,32 @@ namespace Batch_Rename
                     result = action.Processor.Invoke(result);
                 }
 
-                var f = new FileInfo(file.Path);
-                f.MoveTo(dir + "\\" + result);
+                int i = 1;
+                string[] words = new string[] { };
+
+                while (true)
+                {
+
+                    try
+                    {
+                        var f = new FileInfo(file.Path);
+                        f.MoveTo(dir + "\\" + result);
+                        break;
+                    }
+                    catch (Exception)
+                    {
+                        //MessageBox.Show(ex.Message);
+                        file.Error = "duplicate";
+
+                        if (i == 1)
+                        {
+                            words = result.Split('.');
+                        }
+                        result = words[0] + i + "." + words[1];
+                        i++;
+                    }
+                }
+
                 MessageBox.Show(result);
 
                 Refresh_Btn_Click(sender, e);
@@ -118,6 +142,12 @@ namespace Batch_Rename
 
         private void Add_Method_Btn_Click(object sender, RoutedEventArgs e)
         {
+            if (Add_Method_Combobox.SelectedItem == null)
+            {
+                MessageBox.Show("Choose a method");
+                return;
+            }
+
             var prototype = Add_Method_Combobox.SelectedItem as StringAction;
 
             var instance = prototype.Clone();
@@ -133,6 +163,17 @@ namespace Batch_Rename
 
         private void Top_Btn_Click(object sender, RoutedEventArgs e)
         {
+            if (Actions_ListBox.Items.Count == 0)
+            {
+                MessageBox.Show("No have method");
+                return;
+            }
+            if (Actions_ListBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Choose a method to move");
+                return;
+            }
+
             var index = Actions_ListBox.SelectedIndex;
             if (index != 0)
             {
@@ -149,6 +190,17 @@ namespace Batch_Rename
 
         private void Up_Btn_Click(object sender, RoutedEventArgs e)
         {
+            if (Actions_ListBox.Items.Count == 0)
+            {
+                MessageBox.Show("No have method");
+                return;
+            }
+            if (Actions_ListBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Choose a method to move");
+                return;
+            }
+
             var index = Actions_ListBox.SelectedIndex;
             if (index != 0)
             {
@@ -165,6 +217,17 @@ namespace Batch_Rename
 
         private void Down_Btn_Click(object sender, RoutedEventArgs e)
         {
+            if (Actions_ListBox.Items.Count == 0)
+            {
+                MessageBox.Show("No have method");
+                return;
+            }
+            if (Actions_ListBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Choose a method to move");
+                return;
+            }
+
             var index = Actions_ListBox.SelectedIndex;
             if (index != Actions_ListBox.Items.Count - 1)
             {
@@ -181,6 +244,17 @@ namespace Batch_Rename
 
         private void Bottom_Btn_Click(object sender, RoutedEventArgs e)
         {
+            if (Actions_ListBox.Items.Count == 0)
+            {
+                MessageBox.Show("No have method");
+                return;
+            }
+            if (Actions_ListBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Choose a method to move");
+                return;
+            }
+
             var index = Actions_ListBox.SelectedIndex;
             var length = Actions_ListBox.Items.Count - 1;
 
@@ -197,10 +271,15 @@ namespace Batch_Rename
             }
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_Edit_Click(object sender, RoutedEventArgs e)
         {
             var action = Actions_ListBox.SelectedItem as StringAction;
             action.ShowEditDialog();
+        }
+
+        private void MenuItem_Remove_Click(object sender, RoutedEventArgs e)
+        {
+            Actions_ListBox.Items.Remove(Actions_ListBox.Items[Actions_ListBox.SelectedIndex]);
         }
 
         private void Load_Files_Click(object sender, RoutedEventArgs e)
@@ -381,6 +460,16 @@ namespace Batch_Rename
             {
                 MessageBox.Show("You has moved to Bottom");
             }
+        }
+
+        private void Load_Method_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Save_Method_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

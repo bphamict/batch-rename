@@ -23,7 +23,7 @@ namespace Batch_Rename
             }
         }
 
-        public string Details => $"Change type name to {NewCase + " letters"}";
+        public string Details => $"Change type name to {NewCase}";
 
         private void NotifyChange(string v)
         {

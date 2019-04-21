@@ -35,7 +35,15 @@ namespace Batch_Rename
             Needle = Needle_TextBox.Text;
             Hammer = Hammer_TextBox.Text;
 
-            this.DialogResult = true;
+            if (Needle == "" || Hammer == "")
+            {
+                MessageBox.Show("Input data is empty");
+                return;
+            }
+            else
+            {
+                this.DialogResult = true;
+            }
         }
 
         private void Close_Btn_Click(object sender, RoutedEventArgs e)

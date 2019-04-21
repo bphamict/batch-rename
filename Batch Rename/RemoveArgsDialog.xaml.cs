@@ -26,8 +26,8 @@ namespace Batch_Rename
         {
             InitializeComponent();
 
-            Start_Index_TextBox.Text = args.StartIndex.ToString();
-            Count_TextBox.Text = args.Count.ToString();
+            Start_Index_TextBox.Text = args.StartIndex;
+            Count_TextBox.Text = args.Count;
         }
 
         private void Ok_Btn_Click(object sender, RoutedEventArgs e)
@@ -35,7 +35,15 @@ namespace Batch_Rename
             StartIndex = Start_Index_TextBox.Text;
             Count = Count_TextBox.Text;
 
-            this.DialogResult = true;
+            if (StartIndex == "" || Count == "")
+            {
+                MessageBox.Show("Input data is empty");
+                return;
+            }
+            else
+            {
+                this.DialogResult = true;
+            }
         }
 
         private void Close_Btn_Click(object sender, RoutedEventArgs e)

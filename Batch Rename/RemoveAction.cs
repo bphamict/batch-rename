@@ -9,11 +9,10 @@ namespace Batch_Rename
 {
     public class RemoveArgs : StringArgs, INotifyPropertyChanged
     {
-        private int _StartIndex;
-        private int _Count;
-        internal string NewCase;
+        private string _StartIndex;
+        private string _Count;
 
-        public int StartIndex
+        public string StartIndex
         {
             get => _StartIndex;
             set
@@ -24,7 +23,7 @@ namespace Batch_Rename
             }
         }
 
-        public int Count
+        public string Count
         {
             get => _Count;
             set
@@ -68,8 +67,8 @@ namespace Batch_Rename
             if (screen.ShowDialog() == true)
             {
                 var myArgs = Args as RemoveArgs;
-                myArgs.StartIndex = int.Parse(screen.StartIndex);
-                myArgs.Count = int.Parse(screen.Count);
+                myArgs.StartIndex = screen.StartIndex;
+                myArgs.Count = screen.Count;
             }
         }
 
@@ -79,7 +78,7 @@ namespace Batch_Rename
             var startIndex = myArgs.StartIndex;
             var count = myArgs.Count;
 
-            return origin.Remove(startIndex, count);
+            return origin.Remove(int.Parse(startIndex), int.Parse(count));
         }
     }
 }
